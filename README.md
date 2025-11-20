@@ -52,6 +52,28 @@ Notes
 - The scripts set a non-interactive matplotlib backend (`Agg`) to ensure images are saved even when running without a display.
 - If you want to view the image, open the generated `_spectrogram.png` file in any image viewer.
 
+Short wrapper (Windows)
+-
+There's a short wrapper `run_wts.bat` in the repository that runs `make_spec.py` on the example `wts.wav` and opens the generated PNG automatically. From the repo folder run:
+
+```cmd
+.\run_wts.bat
+```
+
+This will generate `C:\Users\rusty\Music\wts_spectrogram.png` and then open it in your default image viewer. The same PNG is also copied into the repo as `wts_spectrogram.png` for quick preview on GitHub or in VS Code.
+
+Opening in Explorer
+-
+If `start` doesn't bring the image to the foreground on your system, use Explorer to select the file instead:
+
+```cmd
+explorer /select,"C:\Users\rusty\Music\wts_spectrogram.png"
+```
+
+Custom usage
+-
+If you want a similar short command for other WAV files, I can add a more general wrapper `make_spec.bat <path-to-wav>` or a PowerShell script with argument parsing — tell me which you prefer.
+
 License
 -
 Add your preferred license here.
