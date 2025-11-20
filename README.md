@@ -70,9 +70,28 @@ If `start` doesn't bring the image to the foreground on your system, use Explore
 explorer /select,"C:\Users\rusty\Music\wts_spectrogram.png"
 ```
 
-Custom usage
+Generalized wrapper (PowerShell)
 -
-If you want a similar short command for other WAV files, I can add a more general wrapper `make_spec.bat <path-to-wav>` or a PowerShell script with argument parsing — tell me which you prefer.
+Use the PowerShell wrapper `make_spec.ps1` to generate spectrograms for any WAV file:
+
+```powershell
+.\make_spec.ps1 "C:\path\to\your\audio.wav"
+```
+
+This will:
+1. Run `make_spec.py` on your WAV file
+2. Generate `your_audio_spectrogram.png` in the same folder as the WAV
+3. Open the PNG in your default image viewer automatically
+
+Examples:
+
+```powershell
+.\make_spec.ps1 "C:\Users\rusty\Music\wts.wav"
+.\make_spec.ps1 "C:\Users\rusty\Music\song.wav"
+.\make_spec.ps1 "D:\recordings\podcast.wav"
+```
+
+The wrapper validates that the WAV file exists before running and reports any errors clearly.
 
 License
 -
